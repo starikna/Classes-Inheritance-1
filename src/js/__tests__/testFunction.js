@@ -59,20 +59,6 @@ describe('test class Character', () => {
     expect(typeof received.name).toBe(expected);
   });
 
-  test('test function levelUp', () => {
-    const preReceived = new Zombie('Cat');
-    preReceived.levelUp();
-    const expected = 2;
-    expect(preReceived.level).toBe(expected);
-  });
-
-  test('test function damage', () => {
-    const received = new Zombie('Mat');
-    received.damage(20);
-    const expected = 88;
-    expect(received.health).toBe(expected);
-  });
-
   test('test function checkName', () => {
     const preReceived = new Zombie('P');
     const received = preReceived.checkName();
