@@ -1,4 +1,5 @@
 import { Character } from "../app";
+export { Zombie };
 
 class Zombie extends Character {
   constructor(name, type = 'Zombie') {

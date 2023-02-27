@@ -1,8 +1,10 @@
 import { Character } from '../app';
+// import { Zombie } from '../classes/zombie';
 
 describe('1_test class Character', () => {
   class Zombie extends Character {};
-
+  // const expected = new Zombie();
+  
   test('2_Class is defined', () => {
     expect(Character).toBeDefined();
   });
@@ -11,28 +13,19 @@ describe('1_test class Character', () => {
       expect(Zombie).toBeDefined();
   });
 
-  test('4_test check name length > 1', () => {
-    const received = new Zombie('Nat');
-    const expected = 1;
-    expect(received.name.length).toBeGreaterThan(expected);
+  test('4_test check type = "string"', () => {
+    expect(() => new Zombie('Nat', 123)).toThrow();
   });
 
-  test('5_test check name length > 1', () => {
-    const my = new Zombie('N');
-    function received() {
-      if (my.name.length < 2 || my.name.length > 10) throw new Error ('Ошибка длины имени!');
-    } 
-    const expected = 'Error';
-    expect(received).toThrow(expected);
+  test('5_test check name length', () => {
+    expect(() => new Zombie('N')).toThrow();
   });
 
   test('6_test check name = "string"', () => {
-    const you = new Zombie(123);
-    function received () {
-      if (typeof you.name !== 'string') throw new TypeError('Имя - не строка!');
-    }
-
-    const expected = 'Error';
-    expect(received).toThrow(expected);
+    expect(() => new Zombie(123)).toThrow();
   });
+
+  // test('7_test check name = "string"', () => {
+  //   expect(() => {expected.name = 123}).toThrow();
+  // });
 });

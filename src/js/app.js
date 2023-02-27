@@ -5,8 +5,17 @@ export class Character {
     this.health = 100;
     this.level = 1;
 
-  if (this.name.length < 2 || this.name.length > 10) throw new Error('Ошибка длины имени!');
+    if (name.length < 2 || name.length > 10) 
+    {
+      throw new Error('Ошибка длины имени!');
+    }
 
-  if (typeof this.name !== 'string') throw new Error('Имя - не строка!');
+    if (typeof name !== 'string') {
+      throw new Error('Имя - не строка!');
+    }
+
+    if (typeof type !== 'string') {
+      throw new Error('Тип - не строка!');
+    }
   };
 }
